@@ -1,6 +1,7 @@
 """
-Counts the number of Sundays that fell on the first of the month between 1901 and 2000
+Counts the number of Sundays that fell on the first of the month between 1901 and 2000.
 """
+
 
 def leap_year_chk(input_year):
     """

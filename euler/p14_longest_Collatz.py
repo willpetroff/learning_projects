@@ -1,3 +1,8 @@
+"""
+Returns the largest Collatz sequence (even n = n/2; odd n = 3n+1) within an upper bound starting-point.
+"""
+
+
 largest_seq = 0
 count = 2
 while count < 1000000:
