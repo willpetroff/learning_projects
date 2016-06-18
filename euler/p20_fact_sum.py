@@ -1,3 +1,7 @@
+"""
+Finds the sum of the digits in a given factorial.
+"""
+
 def fact_math(num):
     if num == 1:
         return 1

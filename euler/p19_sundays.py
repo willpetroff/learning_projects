@@ -1,4 +1,13 @@
+"""
+Counts the number of Sundays that fell on the first of the month between 1901 and 2000
+"""
+
 def leap_year_chk(input_year):
+    """
+    Checks if a given year has 365 or 366 days and returns 1 (true) or 0 (false)
+    :param input_year: int year
+    :return: int 1 or 0
+    """
     if (input_year % 4 == 0 and input_year % 100 != 0) or input_year % 400 == 0:
         return 1
     else:
@@ -6,6 +15,16 @@ def leap_year_chk(input_year):
 
 
 def day_start_check(day_start_dict, first_day, leap_year):
+    """
+    Searches 'day_start_year' dict for 'first_day', 'leap_year' value.
+
+    If present, returns the count of Sundays in a month and the last day.
+    Else, calls 'sunday_counter' to generate values.
+    :param day_start_dict: dict value
+    :param first_day: int value between 1 and 7
+    :param leap_year: 1 or 0
+    :return: int sun_count, int next_start_day
+    """
     if day_start_dict[first_day][leap_year]['sundays']:
         return day_start_dict[first_day][leap_year]['sundays'], day_start_dict[first_day][leap_year]['last_day']
     else:
@@ -14,6 +33,13 @@ def day_start_check(day_start_dict, first_day, leap_year):
 
 
 def sunday_counter(first_day, leap_year):
+    """
+    Counts number of Sundays in month.
+
+    :param first_day: int value between 1 and 7
+    :param leap_year: int value 1 or 0
+    :return: int value sundays, int value current_day (between 1-7)
+    """
     month_len = {1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31}
     sundays = 0
     current_day = first_day
