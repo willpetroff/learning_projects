@@ -1,8 +1,22 @@
+"""
+Functions that calculates the square root.
+"""
+
+
 def sqrt_int(x):
+    """
+    Takes int input and calculates its square root. If the given value is not a perfect square, it calls a function to
+    calculate the square root for floats.
+    This function returns nothing, printing out the answer instead.
+    :param x: Int value
+    :return: None
+    """
     ans = 0
     if x >= 0 and type(x) == int:
+        # Loops through all numbers less than x to check for square root
         while ans * ans < x:
             ans += 1
+        # If x is not a perfect square, it alerts the user and calls the float method
         if ans * ans != x:
             print('Sorry, ' + str(x) + ' is not a perfect square, starting float test')
             sqrt_float(float(x), .000001)
@@ -14,23 +28,32 @@ def sqrt_int(x):
 
 
 def sqrt_float(x, epsilon):
+    """
+    Takes a float input and calculates its square root using Newton's Method. It also takes another float value to
+    provide an allowable error in the calculation's estimations. If it goes through to many iterations (10,000), the
+    function times out and returns 0.
+    :param x: Float value
+    :param epsilon: Float value
+    :return: Float
+    """
     if x >= 1 and type(x) == float:
-        guess = x / 2.0
+        guess = x / 2.0  # Makes initial guess
         counter = 0
-        if abs(guess ** 2 - x) > epsilon:
+        if abs(guess ** 2 - x) > epsilon:  # Checks to see if guess is within acceptable limits
             while abs(guess ** 2 - x) > epsilon and counter <= 10000:
-                guess -= ((guess ** 2 - x) / (2.0 * guess))
+                guess -= ((guess ** 2 - x) / (2.0 * guess))  # Modifies guess
                 counter += 1
         else:
             print(guess)
         print(counter - 1, guess, guess * guess)
     elif x < 1 and type(x) == float:
-        low = 0.0
-        high = max(x, 1.0)
-        guess = (low + high) / 2.0
+        low = 0.0  # Sets lower bound
+        high = max(x, 1.0)  # Sets upper bound
+        guess = (low + high) / 2.0  # Makes initial guess
         counter = 0
         if abs(guess ** 2 - x) > epsilon:
             while abs(guess ** 2 - x) > epsilon and counter <= 10000:
+                # Resets upper or lower bound given the relative value of the guess**2 to x
                 if guess ** 2 < x:
                     low = guess
                 else:
@@ -43,6 +66,7 @@ def sqrt_float(x, epsilon):
         print(counter - 1, guess, guess * guess)
         if counter > 10000:
             print('Counter timed out.')
+            return 0.0
 
 
 def main():

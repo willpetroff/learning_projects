@@ -1,3 +1,8 @@
+"""
+Calculating the nth number in the Fibonacci Sequence using recursive functions.
+"""
+
+
 from time import time
 
 
