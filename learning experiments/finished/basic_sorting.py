@@ -1,6 +1,8 @@
 """
 This is a file that contains various sorting algorithms.
 """
+
+
 from random import randint
 
 
@@ -47,13 +49,13 @@ def insertion_sort(input_list):
 
 
 def main():
-    test_list_1 = [randint(1, 10000) for i in range(1000)]
+    test_list_1 = [randint(1, 10000) for _ in range(1000)]
     selection_sort(test_list_1)
     print(test_list_1)
-    test_list_2 = [randint(1, 10000) for i in range(1000)]
+    test_list_2 = [randint(1, 10000) for _ in range(1000)]
     bubble_sort(test_list_2)
     print(test_list_2)
-    test_line_3 = [randint(1, 10000) for i in range(1000)]
+    test_line_3 = [randint(1, 10000) for _ in range(1000)]
     insertion_sort(test_line_3)
     print(test_line_3)
 

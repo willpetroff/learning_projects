@@ -20,7 +20,7 @@ def pal_test(string):
 
 
 def pal_test_recur(string):  # Uses recursion to solve the problem instead of looping through
-    if len(string) <= 1: # Returns true if the string is a single character or less
+    if len(string) <= 1:  # Returns true if the string is a single character or less
         return True
     else:
         if string[0] == string[len(string) - 1]:  # Checks to see if character X is equal to character -X
