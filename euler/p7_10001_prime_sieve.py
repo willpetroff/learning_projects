@@ -1,4 +1,4 @@
-def sieve_Erat(limit, desired_prime):
+def sieve_erat(limit, desired_prime):
     limit_plus = limit + 1
     list_one = [i for i in range(limit_plus)]
     list_one[1] = 0
@@ -11,7 +11,7 @@ def sieve_Erat(limit, desired_prime):
 def main():
     prime_limit = int(input('please enter an integer: '))
     desired_prime = 0
-    a = sieve_Erat(prime_limit, desired_prime)
+    a = sieve_erat(prime_limit, desired_prime)
     sum_total = 0
     print(len(a))
     for i in a:

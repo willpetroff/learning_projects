@@ -14,4 +14,6 @@ def main():
     a=larg_fact(user_input)
     b=sorted(a)
     print (b)
-    print (b[len(b)-1])
+    print (b[-1])
+
+main()
