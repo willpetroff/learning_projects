@@ -82,7 +82,7 @@ def main():
     if test_value:
         if '.' in user_input:
             user_input = float(user_input)
-            sqrt_float(user_input, .0000001)
+            sqrt_float(user_input, .00000001)
         else:
             user_input = int(user_input)
             sqrt_int(user_input)

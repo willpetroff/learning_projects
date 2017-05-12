@@ -12,7 +12,7 @@ def selection_sort(input_list):
         min_value_index = initial_index_value  # Sets initial index value for smallest number/char
         for unsorted_index_value in range((initial_index_value + 1), len(input_list)):  # Runs through remaining list
             if min_value > input_list[unsorted_index_value]:
-                # If a item later in the list is smaller, a new minimum value is set, along with a new index value
+                # If an item later in the list is smaller, a new minimum value is set, along with a new index value
                 min_value = input_list[unsorted_index_value]
                 min_value_index = unsorted_index_value
         if min_value == input_list[initial_index_value]:

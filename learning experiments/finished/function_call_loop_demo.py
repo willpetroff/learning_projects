@@ -1,13 +1,12 @@
 """
-This script show the difference (in run-time) in assigning an unchanging function to an object vs constantly calling a function to
+This script show the difference (in run-time) in assigning an unchanging value to a variable vs constantly calling a function to
 determine the value as needed
 """
-
 
 from time import time
 
 
-def test_1():
+def call_1():
     a = [i for i in range(10000000)]
     counter = 0
     start_time = time()
@@ -17,7 +16,7 @@ def test_1():
     print(end_time)
 
 
-def test_2():
+def call_2():
     a = [i for i in range(10000000)]
     counter = 0
     a_len = len(a)  # Sets the value of 'a_len' to len(a)
@@ -29,8 +28,8 @@ def test_2():
 
 
 def main():
-    test_1()
-    test_2()
+    call_1()
+    call_2()
 
 
 if __name__ == '__main__':
