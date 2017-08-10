@@ -1,6 +1,8 @@
 """
-
+Given a list of names, sort the list and return the sum of the values of the characters of a name
+times the name's position in the list.
 """
+
 import csv
 doc_path = ".\\files\\p22_names.txt"
 
